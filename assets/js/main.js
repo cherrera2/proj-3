@@ -24,16 +24,16 @@ function calculateBandwidth() {
 }
 
 function selectFiles(speed) {
-  var t1 = new Audio(document.getElementById('c-t1'));
-  var t2 = new Audio(document.getElementById('c-t2'));
-  var t3 = new Audio(document.getElementById('c-t3'));
-  var t4 = new Audio(document.getElementById('c-t4'));
+  var t1 = document.getElementById('c-t1');
+  var t2 = document.getElementById('c-t2');
+  var t3 = document.getElementById('c-t3');
+  var t4 = document.getElementById('c-t4');
 
   if(speed > 20) {
-    t1.src = "assets/music/Keep_it_Moving-320.mp3"
-    t2.src = "assets/music/Wisdom_and_Happiness-320.mp3"
-    t3.src = "assets/music/In_My_Lifetime-320.mp3"
-    t4.src = "assets/music/In_My_Lifetime-320.mp3"
+    t1.src = "assets/music/Keep_it_Moving-320.mp3";
+    t2.src = "assets/music/Wisdom_and_Happiness-320.mp3";
+    t3.src = "assets/music/In_My_Lifetime-320.mp3";
+    t4.src = "assets/music/Fearless-320.mp3";
 
     console.log(t4.src);
 
@@ -41,26 +41,28 @@ function selectFiles(speed) {
   }
 
   else if (speed <= 20 && speed >= 5) {
-    t1.src = "assets/music/Keep_it_Moving-192.mp3"
-    t2.src = "assets/music/Wisdom_and_Happiness-192.mp3"
-    t3.src = "assets/music/In_My_Lifetime-192.mp3"
-    t4.src = "assets/music/Fearless-192.mp3"
+    t1.src = "assets/music/Keep_it_Moving-192.mp3";
+    t2.src = "assets/music/Wisdom_and_Happiness-192.mp3";
+    t3.src = "assets/music/In_My_Lifetime-192.mp3";
+    t4.src = "assets/music/Fearless-192.mp3";
 
     console.log("Selected music at: 192Kbps");
   }
 
   else if (speed < 5) {
-    t1.src = "assets/music/Keep_it_Moving-128.mp3"
-    t2.src = "assets/music/Wisdom_and_Happiness-128.mp3"
-    t3.src = "assets/music/In_My_Lifetime-128.mp3"
-    t4.src = "assets/music/Fearless-128.mp3"
+    t1.src = "assets/music/Keep_it_Moving-128.mp3";
+    t2.src = "assets/music/Wisdom_and_Happiness-128.mp3";
+    t3.src = "assets/music/In_My_Lifetime-128.mp3";
+    t4.src = "assets/music/Fearless-128.mp3";
 
     console.log("Selected music at: 128Kbps");
   }
 
-  t1.load();
-  t2.load();
-  t3.load();
-  t4.load();
+  console.log(document.querySelectorAll("audio"));
+  var player = document.querySelectorAll("audio");
+
+  player.forEach((e) => {
+    e.load();
+  })
 
 }
